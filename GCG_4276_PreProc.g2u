@@ -1,0 +1,244 @@
+Program.Sub.ScreenSU.Start
+Gui.Form..Create
+Gui.Form..Caption("Project Status Report")
+Gui.Form..Size(4950,3570)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..BackColor(-2147483633)
+Gui.Form..MousePointer(0)
+Gui.Form..Sizeable(False)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.dtpEndDate.Create(DatePicker)
+Gui.Form.dtpEndDate.Size(1935,285)
+Gui.Form.dtpEndDate.Position(2595,645)
+Gui.Form.lblBegDate.Create(Label,"Beginning Date",True,1395,255,0,165,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblEndDate.Create(Label,"Ending Date",True,1395,255,0,2595,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form.dtpBegDate.Create(DatePicker)
+Gui.Form.dtpBegDate.Size(1935,285)
+Gui.Form.dtpBegDate.Position(165,660)
+Gui.Form.cmdPrint.Create(Button)
+Gui.Form.cmdPrint.Size(855,375)
+Gui.Form.cmdPrint.Position(165,2520)
+Gui.Form.cmdPrint.Caption("Print")
+Gui.Form.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.Form.lblBegCust.Create(Label,"Beginning Customer",True,1695,255,0,165,1185,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblEndingCust.Create(Label,"Ending Customer",True,1395,255,0,2595,1185,True,0,"Arial",8,-2147483633,0)
+Gui.Form.chkCloseWO.Create(CheckBox)
+Gui.Form.chkCloseWO.Size(2445,360)
+Gui.Form.chkCloseWO.Position(165,2070)
+Gui.Form.chkCloseWO.Caption("Include Closed Work Orders")
+Gui.Form.txtBegCust.Create(TextBox,"",True,1215,300,0,165,1515,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtEndCust.Create(TextBox,"",True,1215,300,0,2595,1515,True,0,"Arial",8,-2147483643,1)
+Gui.Form.cmdBegCustBrwse.Create(Button)
+Gui.Form.cmdBegCustBrwse.Size(495,375)
+Gui.Form.cmdBegCustBrwse.Position(1575,1485)
+Gui.Form.cmdBegCustBrwse.Caption("^")
+Gui.Form.cmdBegCustBrwse.Event(Click,cmdBegCustBrwse_Click)
+Gui.Form.cmdEndCustBrwse.Create(Button)
+Gui.Form.cmdEndCustBrwse.Size(495,375)
+Gui.Form.cmdEndCustBrwse.Position(4020,1485)
+Gui.Form.cmdEndCustBrwse.Caption("^")
+Gui.Form.cmdEndCustBrwse.Event(Click,cmdEndCustBrwse_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'This is a custom report pre-processor to be used in conjunction with custom report WO Status by SO Project SVC.rpt. 
+'When the program is launched a custom form will display asking the user for a date range and to select a customer/customer range.
+'Coded by: WAW
+'Date: 1/16/17
+
+'open connection
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)
+
+'make the form visible
+gui.Form..Visible(true)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'closing connection and ending program
+F.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.cmdPrint_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Form_UnLoad_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.irunid.Declare(long)
+v.Local.ilogid.Declare(long)
+v.Local.sparams.Declare(string)
+v.Local.binclude.Declare(boolean,false)
+v.Local.ssql.Declare(string)
+v.Local.svalues.Declare(string)
+v.Local.dbegdate.Declare(date)
+v.Local.denddate.Declare(date)
+v.Local.iret.Declare(long)
+v.Local.irptid.Declare(long)
+
+'get the run ID
+f.Global.BI.GetRunID(v.Local.irunid)
+'check to make sure customers were selected
+f.Intrinsic.Control.If(v.Screen.Form!txtBegCust.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Please select an customer range")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.ElseIf(v.Screen.Form!txtEndCust.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Please select a customer range")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+'set the date
+v.Local.dbegdate.Set(v.Screen.Form!dtpBegDate.Value)
+v.Local.denddate.Set(v.Screen.Form!dtpEndDate.Value)
+'close the form
+gui.Form..Visible(false)
+'check to see if included closed wo is checked
+f.Intrinsic.Control.If(v.Screen.Form!chkCloseWO.Value,=,0)
+	'OPEN WORK ORDERS
+	v.Local.binclude.Set(false)
+f.Intrinsic.Control.Else
+	'BOTH OPEN AND CLOSED ORDERS
+	v.Local.binclude.Set(True)
+f.Intrinsic.Control.EndIf
+
+'get the report ID
+f.Global.BI.GetIDFromName("GCG_4276_ProjectStatus.rpt",v.Local.irptid)
+
+'start logging
+F.Global.BI.StartLogging(V.Local.iRunID,v.Local.irptid,0,"",V.Local.iLogID)
+
+'Stopping logging
+F.Global.BI.StopLogging(V.local.iRunID)
+
+'set the parameters and the values of those parameters
+V.Local.sParams.Set("IncludeClosedWO*!*BegCust*!*EndCust*!*BegDate*!*EndDate")
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}*!*{4}",v.Local.binclude,v.Screen.Form!txtBegCust.Text,v.Screen.Form!txtEndCust.Text,v.Local.dbegdate,v.Local.denddate,v.Local.sValues)
+'print the report
+F.Global.BI.RunReportPreProcessor(V.Local.irunid,-1,V.Local.sParams,V.Local.sValues,"GCG_4276_ProjectStatus.rpt",-1,True,"",-1,"",-1,"","",V.Local.iRet)
+'close the form/program
+f.Intrinsic.Control.CallSub(form_unload)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Form_UnLoad_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.cmdBegCustBrwse_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdPrint_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sret.Declare(string)
+
+'set type ahead
+Function.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+'Clear textboxes
+gui.Form.txtBegCust.Text("")
+gui.Form.txtEndCust.Text("")
+
+f.Intrinsic.UI.Browser(205,"",v.Local.sret)
+
+'make sure the user selects an customer
+Function.Intrinsic.Control.If(Variable.Local.sRet,"=","***CANCEL***")
+ 	Function.Intrinsic.UI.Msgbox("No customer was selected!")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.Else
+	'split the return
+	f.Intrinsic.String.Split(v.Local.sret,"*!*",v.Local.sret)
+	gui.Form.txtBegCust.Text(v.Local.sret(0))
+	gui.Form.txtEndCust.Text(v.Local.sret(0))
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPrint_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdBegCustBrwse_Click.End
+
+Program.Sub.cmdEndCustBrwse_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdPrint_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sret.Declare(string)
+
+'set type ahead
+Function.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+'Clear textbox
+gui.Form.txtEndCust.Text("")
+
+f.Intrinsic.UI.Browser(205,"",v.Local.sret)
+
+'make sure the user selects an customer
+Function.Intrinsic.Control.If(Variable.Local.sRet,"=","***CANCEL***")
+ 	Function.Intrinsic.UI.Msgbox("No customer was selected!")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.Else
+	'split the return
+	f.Intrinsic.String.Split(v.Local.sret,"*!*",v.Local.sret)
+	gui.Form.txtEndCust.Text(v.Local.sret(0))
+f.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPrint_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdEndCustBrwse_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$WAW$}$1/16/2017 9:29:44 AM$}$False
+Program.Sub.Comments.End
