@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyntaxEdit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SearchOptions>SelectionOnly FindTextAtCursor FindSelectedText CycledSearch</SearchOptions>
+  <BorderStyle>None</BorderStyle>
+  <Pages>
+    <DefaultPage>
+      <Header>
+        <Offset>
+          <X>0</X>
+          <Y>0</Y>
+        </Offset>
+      </Header>
+      <Footer>
+        <Offset>
+          <X>0</X>
+          <Y>0</Y>
+        </Offset>
+      </Footer>
+      <PageSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </PageSize>
+    </DefaultPage>
+  </Pages>
+  <DisplayStrings />
+  <Selection>
+    <SelectionRect>
+      <Location>
+        <X>0</X>
+        <Y>241</Y>
+      </Location>
+      <Size>
+        <Width>24</Width>
+        <Height>2</Height>
+      </Size>
+      <X>0</X>
+      <Y>241</Y>
+      <Width>24</Width>
+      <Height>2</Height>
+    </SelectionRect>
+    <Options>UseColors OverwriteBlocks SelectLineOnTripleClick CopyLineWhenEmpty SelectWordOnCtrlClick</Options>
+  </Selection>
+  <Gutter>
+    <LineNumbersForeColor>WindowText</LineNumbersForeColor>
+    <Options>PaintLineNumbers PaintBookMarks PaintLineModificators</Options>
+  </Gutter>
+  <Margin>
+    <Visible>false</Visible>
+  </Margin>
+  <LineStyles />
+  <LineSeparator />
+  <Printing>
+    <Footer>
+      <Offset>
+        <X>0</X>
+        <Y>0</Y>
+      </Offset>
+    </Footer>
+    <Header>
+      <Offset>
+        <X>0</X>
+        <Y>0</Y>
+      </Offset>
+    </Header>
+  </Printing>
+  <WhiteSpace />
+  <TextSource>
+    <Position>
+      <X>0</X>
+      <Y>241</Y>
+    </Position>
+    <Lexer>
+      <Scheme>
+        <Author>Quantum Whale, LLC.</Author>
+        <Copyright>Copyright (c) 2004 - 2014 Quantum Whale LLC.</Copyright>
+        <FileType>gas</FileType>
+        <Version>1.5</Version>
+        <Styles>
+          <Style>
+            <Name>idents</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>numbers</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>reswords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>comments</Name>
+            <ForeColor>Green</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>xmlcomments</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>symbols</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>whitespace</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>strings</Name>
+            <ForeColor>Maroon</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>directives</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>htmlparams</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>syntax errors</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>codes nippets</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>255:180:228:180</BackColor>
+          </Style>
+          <Style>
+            <Name>GabReservedWords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabTokenWithBrackets</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabFunctionIntrinsicDebug</Name>
+            <ForeColor>White</ForeColor>
+            <BackColor>Red</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>GabVariable</Name>
+            <ForeColor>Teal</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabVariableSystemDefined</Name>
+            <ForeColor>Teal</ForeColor>
+            <FontStyle>Bold Italic</FontStyle>
+          </Style>
+          <Style>
+            <Name>GabGui</Name>
+            <ForeColor>OrangeRed</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabProgramSubStartEnd</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>LightGray</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+        </Styles>
+      </Scheme>
+    </Lexer>
+    <TextStrings>
+      <Lines>
+        <string>Program.Sub.ScreenSU.Start</string>
+        <string>Gui.Form..Create</string>
+        <string>Gui.Form..Caption("Project Status Report")</string>
+        <string>Gui.Form..Size(4950,3570)</string>
+        <string>Gui.Form..MinX(0)</string>
+        <string>Gui.Form..MinY(0)</string>
+        <string>Gui.Form..Position(0,0)</string>
+        <string>Gui.Form..BackColor(-2147483633)</string>
+        <string>Gui.Form..MousePointer(0)</string>
+        <string>Gui.Form..Sizeable(False)</string>
+        <string>Gui.Form..Event(UnLoad,Form_UnLoad)</string>
+        <string>Gui.Form.dtpEndDate.Create(DatePicker)</string>
+        <string>Gui.Form.dtpEndDate.Size(1935,285)</string>
+        <string>Gui.Form.dtpEndDate.Position(2595,645)</string>
+        <string>Gui.Form.lblBegDate.Create(Label,"Beginning Date",True,1395,255,0,165,330,True,0,"Arial",8,-2147483633,0)</string>
+        <string>Gui.Form.lblEndDate.Create(Label,"Ending Date",True,1395,255,0,2595,330,True,0,"Arial",8,-2147483633,0)</string>
+        <string>Gui.Form.dtpBegDate.Create(DatePicker)</string>
+        <string>Gui.Form.dtpBegDate.Size(1935,285)</string>
+        <string>Gui.Form.dtpBegDate.Position(165,660)</string>
+        <string>Gui.Form.cmdPrint.Create(Button)</string>
+        <string>Gui.Form.cmdPrint.Size(855,375)</string>
+        <string>Gui.Form.cmdPrint.Position(165,2520)</string>
+        <string>Gui.Form.cmdPrint.Caption("Print")</string>
+        <string>Gui.Form.cmdPrint.Event(Click,cmdPrint_Click)</string>
+        <string>Gui.Form.lblBegCust.Create(Label,"Beginning Customer",True,1695,255,0,165,1185,True,0,"Arial",8,-2147483633,0)</string>
+        <string>Gui.Form.lblEndingCust.Create(Label,"Ending Customer",True,1395,255,0,2595,1185,True,0,"Arial",8,-2147483633,0)</string>
+        <string>Gui.Form.chkCloseWO.Create(CheckBox)</string>
+        <string>Gui.Form.chkCloseWO.Size(2445,360)</string>
+        <string>Gui.Form.chkCloseWO.Position(165,2070)</string>
+        <string>Gui.Form.chkCloseWO.Caption("Include Closed Work Orders")</string>
+        <string>Gui.Form.txtBegCust.Create(TextBox,"",True,1215,300,0,165,1515,True,0,"Arial",8,-2147483643,1)</string>
+        <string>Gui.Form.txtEndCust.Create(TextBox,"",True,1215,300,0,2595,1515,True,0,"Arial",8,-2147483643,1)</string>
+        <string>Gui.Form.cmdBegCustBrwse.Create(Button)</string>
+        <string>Gui.Form.cmdBegCustBrwse.Size(495,375)</string>
+        <string>Gui.Form.cmdBegCustBrwse.Position(1575,1485)</string>
+        <string>Gui.Form.cmdBegCustBrwse.Caption("^")</string>
+        <string>Gui.Form.cmdBegCustBrwse.Event(Click,cmdBegCustBrwse_Click)</string>
+        <string>Gui.Form.cmdEndCustBrwse.Create(Button)</string>
+        <string>Gui.Form.cmdEndCustBrwse.Size(495,375)</string>
+        <string>Gui.Form.cmdEndCustBrwse.Position(4020,1485)</string>
+        <string>Gui.Form.cmdEndCustBrwse.Caption("^")</string>
+        <string>Gui.Form.cmdEndCustBrwse.Event(Click,cmdEndCustBrwse_Click)</string>
+        <string>Program.Sub.ScreenSU.End</string>
+        <string />
+        <string>Program.Sub.Preflight.Start</string>
+        <string>Program.Sub.Preflight.End</string>
+        <string />
+        <string>Program.Sub.Main.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string>'This is a custom report pre-processor to be used in conjunction with custom report WO Status by SO Project SVC.rpt. </string>
+        <string>'When the program is launched a custom form will display asking the user for a date range and to select a customer/customer range.</string>
+        <string>'Coded by: WAW</string>
+        <string>'Date: 1/16/17</string>
+        <string />
+        <string>'open connection</string>
+        <string>F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)</string>
+        <string />
+        <string>'make the form visible</string>
+        <string>gui.Form..Visible(true)</string>
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.Main.End</string>
+        <string />
+        <string>Program.Sub.Form_UnLoad.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string />
+        <string>'closing connection and ending program</string>
+        <string>F.ODBC.Connection!conx.Close</string>
+        <string />
+        <string>f.Intrinsic.Control.End</string>
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	f.Intrinsic.Control.End</string>
+        <string />
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.Form_UnLoad.End</string>
+        <string />
+        <string>Program.Sub.cmdPrint_Click.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Form_UnLoad_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string>v.Local.irunid.Declare(long)</string>
+        <string>v.Local.ilogid.Declare(long)</string>
+        <string>v.Local.sparams.Declare(string)</string>
+        <string>v.Local.binclude.Declare(boolean,false)</string>
+        <string>v.Local.ssql.Declare(string)</string>
+        <string>v.Local.svalues.Declare(string)</string>
+        <string>v.Local.dbegdate.Declare(date)</string>
+        <string>v.Local.denddate.Declare(date)</string>
+        <string>v.Local.iret.Declare(long)</string>
+        <string>v.Local.irptid.Declare(long)</string>
+        <string />
+        <string>'get the run ID</string>
+        <string>f.Global.BI.GetRunID(v.Local.irunid)</string>
+        <string>'check to make sure customers were selected</string>
+        <string>f.Intrinsic.Control.If(v.Screen.Form!txtBegCust.Text,=,"")</string>
+        <string>	F.Intrinsic.UI.Msgbox("Please select an customer range")</string>
+        <string>	f.Intrinsic.Control.ExitSub</string>
+        <string>f.Intrinsic.Control.ElseIf(v.Screen.Form!txtEndCust.Text,=,"")</string>
+        <string>	F.Intrinsic.UI.Msgbox("Please select a customer range")</string>
+        <string>	f.Intrinsic.Control.ExitSub</string>
+        <string>f.Intrinsic.Control.EndIf</string>
+        <string>'set the date</string>
+        <string>v.Local.dbegdate.Set(v.Screen.Form!dtpBegDate.Value)</string>
+        <string>v.Local.denddate.Set(v.Screen.Form!dtpEndDate.Value)</string>
+        <string>'close the form</string>
+        <string>gui.Form..Visible(false)</string>
+        <string>'check to see if included closed wo is checked</string>
+        <string>f.Intrinsic.Control.If(v.Screen.Form!chkCloseWO.Value,=,0)</string>
+        <string>	'OPEN WORK ORDERS</string>
+        <string>	v.Local.binclude.Set(false)</string>
+        <string>f.Intrinsic.Control.Else</string>
+        <string>	'BOTH OPEN AND CLOSED ORDERS</string>
+        <string>	v.Local.binclude.Set(True)</string>
+        <string>f.Intrinsic.Control.EndIf</string>
+        <string />
+        <string>'get the report ID</string>
+        <string>f.Global.BI.GetIDFromName("GCG_4276_ProjectStatus.rpt",v.Local.irptid)</string>
+        <string />
+        <string>'start logging</string>
+        <string>F.Global.BI.StartLogging(V.Local.iRunID,v.Local.irptid,0,"",V.Local.iLogID)</string>
+        <string />
+        <string>'Stopping logging</string>
+        <string>F.Global.BI.StopLogging(V.local.iRunID)</string>
+        <string />
+        <string>'set the parameters and the values of those parameters</string>
+        <string>V.Local.sParams.Set("IncludeClosedWO*!*BegCust*!*EndCust*!*BegDate*!*EndDate")</string>
+        <string>F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}*!*{4}",v.Local.binclude,v.Screen.Form!txtBegCust.Text,v.Screen.Form!txtEndCust.Text,v.Local.dbegdate,v.Local.denddate,v.Local.sValues)</string>
+        <string>'print the report</string>
+        <string>F.Global.BI.RunReportPreProcessor(V.Local.irunid,-1,V.Local.sParams,V.Local.sValues,"GCG_4276_ProjectStatus.rpt",-1,True,"",-1,"",-1,"","",V.Local.iRet)</string>
+        <string>'close the form/program</string>
+        <string>f.Intrinsic.Control.CallSub(form_unload)</string>
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string>F.Intrinsic.Control.Label("Form_UnLoad_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	f.Intrinsic.Control.CallSub(form_unload)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string>Program.Sub.cmdPrint_Click.End</string>
+        <string />
+        <string>Program.Sub.cmdBegCustBrwse_Click.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("cmdPrint_Click_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string>v.Local.sret.Declare(string)</string>
+        <string />
+        <string>'set type ahead</string>
+        <string>Function.Intrinsic.UI.SetBrowserHotTypeAhead(True)</string>
+        <string />
+        <string>'Clear textboxes</string>
+        <string>gui.Form.txtBegCust.Text("")</string>
+        <string>gui.Form.txtEndCust.Text("")</string>
+        <string />
+        <string>f.Intrinsic.UI.Browser(205,"",v.Local.sret)</string>
+        <string />
+        <string>'make sure the user selects an customer</string>
+        <string>Function.Intrinsic.Control.If(Variable.Local.sRet,"=","***CANCEL***")</string>
+        <string> 	Function.Intrinsic.UI.Msgbox("No customer was selected!")</string>
+        <string>	f.Intrinsic.Control.ExitSub</string>
+        <string>f.Intrinsic.Control.Else</string>
+        <string>	'split the return</string>
+        <string>	f.Intrinsic.String.Split(v.Local.sret,"*!*",v.Local.sret)</string>
+        <string>	gui.Form.txtBegCust.Text(v.Local.sret(0))</string>
+        <string>	gui.Form.txtEndCust.Text(v.Local.sret(0))</string>
+        <string>f.Intrinsic.Control.EndIf</string>
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("cmdPrint_Click_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	f.Intrinsic.Control.CallSub(form_unload)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.cmdBegCustBrwse_Click.End</string>
+        <string />
+        <string>Program.Sub.cmdEndCustBrwse_Click.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("cmdPrint_Click_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string>v.Local.sret.Declare(string)</string>
+        <string />
+        <string>'set type ahead</string>
+        <string>Function.Intrinsic.UI.SetBrowserHotTypeAhead(True)</string>
+        <string />
+        <string>'Clear textbox</string>
+        <string>gui.Form.txtEndCust.Text("")</string>
+        <string />
+        <string>f.Intrinsic.UI.Browser(205,"",v.Local.sret)</string>
+        <string />
+        <string>'make sure the user selects an customer</string>
+        <string>Function.Intrinsic.Control.If(Variable.Local.sRet,"=","***CANCEL***")</string>
+        <string> 	Function.Intrinsic.UI.Msgbox("No customer was selected!")</string>
+        <string>	f.Intrinsic.Control.ExitSub</string>
+        <string>f.Intrinsic.Control.Else</string>
+        <string>	'split the return</string>
+        <string>	f.Intrinsic.String.Split(v.Local.sret,"*!*",v.Local.sret)</string>
+        <string>	gui.Form.txtEndCust.Text(v.Local.sret(0))</string>
+        <string>f.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("cmdPrint_Click_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4276_PreProc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	f.Intrinsic.Control.CallSub(form_unload)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.cmdEndCustBrwse_Click.End</string>
+        <string />
+        <string>Program.Sub.Comments.Start</string>
+        <string>${$0$}$$}$WAW$}$1/16/2017 9:29:44 AM$}$False</string>
+        <string>Program.Sub.Comments.End</string>
+      </Lines>
+    </TextStrings>
+  </TextSource>
+  <Scrolling>
+    <WindowOriginY>25</WindowOriginY>
+    <Options>None</Options>
+  </Scrolling>
+  <Outlining>
+    <AllowOutlining>true</AllowOutlining>
+    <ImageSize>8</ImageSize>
+    <Ranges>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>0</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>42</Y>
+        </EndPoint>
+        <Text>Program.Sub.ScreenSU</Text>
+        <DisplayText>Program.Sub.ScreenSU</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>44</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>45</Y>
+        </EndPoint>
+        <Text>Program.Sub.Preflight</Text>
+        <DisplayText>Program.Sub.Preflight</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>47</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>72</Y>
+        </EndPoint>
+        <Text>Program.Sub.Main</Text>
+        <DisplayText>Program.Sub.Main</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>74</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>96</Y>
+        </EndPoint>
+        <Text>Program.Sub.Form_UnLoad</Text>
+        <DisplayText>Program.Sub.Form_UnLoad</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>98</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>162</Y>
+        </EndPoint>
+        <Text>Program.Sub.cmdPrint_Click</Text>
+        <DisplayText>Program.Sub.cmdPrint_Click</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>164</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>201</Y>
+        </EndPoint>
+        <Text>Program.Sub.cmdBegCustBrwse_Click</Text>
+        <DisplayText>Program.Sub.cmdBegCustBrwse_Click</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>203</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>239</Y>
+        </EndPoint>
+        <Text>Program.Sub.cmdEndCustBrwse_Click</Text>
+        <DisplayText>Program.Sub.cmdEndCustBrwse_Click</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>241</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>243</Y>
+        </EndPoint>
+        <Text>Program.Sub.Comments</Text>
+        <DisplayText>Program.Sub.Comments</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+    </Ranges>
+  </Outlining>
+  <HyperText />
+  <Spelling />
+  <Braces />
+</SyntaxEdit>
